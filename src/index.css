@@ -1,11 +1,12 @@
 html,
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: copperplate, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #7700ee;
-  color: #fff;
+  background: -webkit-linear-gradient(right, #d8caad , #c5ae91);
+  background-size: 200% 200%;
+  animation: gradient-animation 2s ease infinite;
   overflow-x: hidden;
 }
 #root {
@@ -14,7 +15,13 @@ body {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
+  color: black;
+}
+
+p {
+  font-size: 1.5rem;
+  color: black;
 }
 @media screen and (max-width: 768px) {
   h1 {
