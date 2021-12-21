@@ -35,14 +35,13 @@ const App = () => {
       </div>
       </div>
     );
+  } else {
+    return (
+      <div className="landing">
+        <h1>🇭🇹 wallet connected, now what!</h1>
+      </div>
+    )
   }
-
-
-  return (
-    <div className="landing">
-      <h1>🇭🇹 wallet connected, now what!</h1>
-    </div>
-  )
 };
 
 export default App;
