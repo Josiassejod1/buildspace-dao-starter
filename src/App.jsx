@@ -1,15 +1,48 @@
 import { useWeb3 } from "@3rdweb/hooks";
 import coat from "../src/coat_of_arms.png";
 import twitterLogo from "../src/twitter-logo.svg";
+import { ThirdwebSDK } from "@3rdweb/sdk";
+import React from "react";
 
+// We instatiate the sdk on Rinkeby.
+const sdk = new ThirdwebSDK("rinkeby");
+
+const bundleDropModule = sdk.getBundleDropModule(
+  process.env.DROP_MODULE_ADDRESS,
+);
+
+useEffect(() => {
+  if (!address) {
+    return;
+  }
+
+  return bundleDropModule
+  .balanceOf(address, "O")
+  .then((balance) => {
+    // if blance is granter than 0, they have our NFT!
+    if (balance.gt(0)) {
+      setHasClaimedNFT(true);
+      console.log("🌟 this user has a membership NFT!")
+    } else {
+      setHasClaimedNFT(false);
+      console.log("😭 this user doesn't have a membership NFT.");
+    }
+  }).catch((error) => {
+    setHasClaimedNFT(false);
+    console.log("failed to nft balance", error);
+  });
+}, [address]);
 
 
 const App = () => {
 
   const { connectWallet, address, error, provider} = useWeb3();
+  const [hasClaimedNFT, setHasClaimedNFT] = useState(false);
   console.log("Address:", address);
   const TWITTER_HANDLE = "officialdalvinj";
   const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+
+  useEf
 
 
   if (!address) {
