@@ -16,6 +16,7 @@ const App = () => {
   const { connectWallet, address, error, provider} = useWeb3();
   console.log("Address:", address);
   const [hasClaimedNFT, setHasClaimedNFT] = useState(false);
+  const [comingSoon, setCommingSoon] = useState(true);
   // isClaiming lets us easily keep a loading state while the NFT is minting.
   const [isClaiming, setIsClaiming] = useState(false);
   const signer = provider ? provider.getSigner() : undefined;
@@ -61,7 +62,7 @@ const App = () => {
         <img src={coat} width="50%" height="25%" />   
         </div>
         <h1>Welcome to The Haiti DAO</h1>     
-        <button onClick={() => connectWallet("injected")} >Join The DAO</button>
+        { comingSoon ? <button>Coming Soon</button> : <button onClick={() => connectWallet("injected")} >Join The DAO</button>}
         <p>Funds in this treasury will be used to provide emergency funds to Haiti in times of Crisis</p>
         <p>Voters in the DAO will be able to vote on what non profits we make donations to</p>
         <p>Access to technology for students and updated supplies</p>
