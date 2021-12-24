@@ -10,8 +10,8 @@ const bundleDrop = sdk.getBundleDropModule(
     try {
         await bundleDrop.createBatch([
             {
-                name: "Leaf Village Headband",
-                description: "This NFT will give you access to NarutoDAO!",
+                name: "Haitian Coat of Arms",
+                description: "This NFT will give you access to the Haiti DAO",
                 image: readFileSync("scripts/assets/coat_of_arms.png"),
             },
         ]);

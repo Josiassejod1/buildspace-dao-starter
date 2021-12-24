@@ -3,30 +3,27 @@ import coat from "../src/coat_of_arms.png";
 import twitterLogo from "../src/twitter-logo.svg";
 import { ThirdwebSDK } from "@3rdweb/sdk";
 import React, { useEffect, useState } from "react";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 // We instatiate the sdk on Rinkeby.
 const sdk = new ThirdwebSDK("rinkeby");
 
 
-
-
-
+  const bundleDropModule = sdk.getBundleDropModule(
+    "0x6350c1cCee6Fa72a142C6A4D459dD2c43A1E81E1"
+  );
 
 const App = () => {
-
-  
-
   const { connectWallet, address, error, provider} = useWeb3();
+  console.log("Address:", address);
   const [hasClaimedNFT, setHasClaimedNFT] = useState(false);
   // isClaiming lets us easily keep a loading state while the NFT is minting.
   const [isClaiming, setIsClaiming] = useState(false);
-  console.log("Address:", address);
+  const signer = provider ? provider.getSigner() : undefined;
+
+
   const TWITTER_HANDLE = "officialdalvinj";
   const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-  const signer = provider ? provider.getSigner() : undefined;
+
 
   useEffect(() => {
     sdk.setProviderOrSigner(signer);
@@ -56,24 +53,6 @@ const App = () => {
     });
   }, [address]);
 
-  const mintNFT = () => {
-    setHasClaimedNFT(false);
-
-    bundleDropModule
-    .claim("0", 1)
-    .catch((err) => {
-      console.log("Failed to claim", err);
-      setHasClaimedNFT(false);
-    }).finally(() => {
-      setIsClaiming(false);
-      setHasClaimedNFT(true);
-
-      console.log(
-        `Successfully Minted! Check it out on opensea: https://testnets.opensea.io/assets/${process.env.bundleDropModule.address}/0`
-      )
-    });
-  }
-
 
   if (!address) {
     return (
@@ -101,6 +80,24 @@ const App = () => {
     );
   } 
 
+  const mintNFT = () => {
+    setHasClaimedNFT(true);
+
+    bundleDropModule
+    .claim("0", 1)
+    .catch((err) => {
+      console.log("Failed to claim", err);
+      setHasClaimedNFT(false);
+    }).finally(() => {
+      setIsClaiming(false);
+      setHasClaimedNFT(true);
+
+      console.log(
+        `Successfully Minted! Check it out on opensea: https://testnets.opensea.io/assets/${bundleDropModule.address}/0`
+      )
+    });
+  }
+
   if (hasClaimedNFT) {
     return (
       <div className="member-page">
@@ -108,22 +105,19 @@ const App = () => {
       <p>Congratulations on being a member</p>
       </div>
     )
-  }
-  
-  
-  else {
-    return (
-      <div className="landing">
-        <h1>Mint your member to Haiti DAO 🇭🇹</h1>
-        <button 
-        disabled={isClaiming}
-        onClick={() => mintNFT()}
-        >
-          {isClaiming ? "Minting...." : "Mint your NFT (FREE)"}
-        </button>
-      </div>
-    )
-  }
+  } 
+
+  return (
+    <div className="landing">
+      <h1>Mint your member to Haiti DAO 🇭🇹</h1>
+      <button 
+      disabled={isClaiming}
+      onClick={() => mintNFT()}
+      >
+        {isClaiming ? "Minting...." : "Mint your NFT (FREE)"}
+      </button>
+    </div>
+  );
 };
 
 export default App;
