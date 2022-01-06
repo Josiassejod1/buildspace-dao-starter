@@ -7,7 +7,8 @@ body {
   background: -webkit-linear-gradient(right, #d8caad , #c5ae91);
   background-size: 200% 200%;
   animation: gradient-animation 2s ease infinite;
-  overflow-x: hidden;
+  padding: 10;
+  overflow-x: visible;
 }
 
 p {
