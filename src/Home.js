@@ -70,7 +70,7 @@ const Home = () => {
           <p>
             Funds from this drop will go to <strong><a href="https://www.care.org" target="_blank">www.care.org</a></strong>, 
             and <strong><a href="https://www.securinginternships.com" target="_blank">a book donation</a></strong> to <strong><a href="https://www.jeoc.org" target="_blank">www.jeoc.org</a></strong> for students in Haiti for 
-            each donation.
+            each NFT minted.
           </p>
           {/* <p>
            Donation FAQ
