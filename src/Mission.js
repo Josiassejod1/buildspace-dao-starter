@@ -1,13 +1,13 @@
 import touissant from "../src/touissant.png";
-import { CardBody, Card, CardTitle, CardText } from "reactstrap";
+import { CardBody, Card, CardTitle, CardText, Container } from "reactstrap";
 
 
 const Mission = () => {
     return (
-        <div className="container" style={{padding: 50}}>
-            <div className="container" style={{textAlign: "center", padding: 10}}>
+        <Container style={{padding: 10}}>
+            <Container style={{textAlign: "center", padding: 10}}>
                 <img src={touissant} width="125" />
-            </div>
+            </Container>
             <Card>
                 <CardBody>
                     <CardTitle tag="h1">Our Mission</CardTitle>
@@ -25,7 +25,7 @@ const Mission = () => {
                     </CardText>
                 </CardBody>
             </Card>
-        </div>
+        </Container>
     )
 }
 

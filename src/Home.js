@@ -3,6 +3,7 @@ import coat from "../src/coat_of_arms.png";
 import twitterLogo from "../src/twitter-logo.svg";
 import { ThirdwebSDK } from "@3rdweb/sdk";
 import React, { useEffect, useState } from "react";
+import { Container } from "reactstrap";
 
 // We instatiate the sdk on Rinkeby.
 const sdk = new ThirdwebSDK("rinkeby");
@@ -58,14 +59,16 @@ const Home = () => {
   
     if (!address) {
       return (
-        <div className="landing">
+        <Container fluid style={{margin: "auto 0", textAlign: "center"}}>
           <div>
           <img src={coat} width="50%" height="25%" />   
           </div>
           <div style={{padding: "15px"}}>
           <h1>Welcome to The Haiti DAO</h1>  
           </div>   
-          { comingSoon ? <button>Drop Coming Soon</button> : <button onClick={() => connectWallet("injected")} >Join The DAO</button>}
+         <div style={{margin: "auto 0", textAlign: "center"}}>
+         { comingSoon ? <button>Drop Coming Soon</button> : <button onClick={() => connectWallet("injected")} >Join The DAO</button>}
+         </div>
           <p>"Empowering The Haitian Diaspora To Help Haiti"</p>
           <p>
             Funds from this drop will go to <strong><a href="https://www.care.org" target="_blank">www.care.org</a></strong>, 
@@ -83,7 +86,7 @@ const Home = () => {
           >{`built by @${TWITTER_HANDLE}`}</a>
          </div>
         </div>
-        </div>
+        </Container>
       );
     } 
   

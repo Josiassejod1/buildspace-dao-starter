@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import Mission from "./Mission";
-import { Nav, NavItem, NavLink } from "reactstrap";
+import { Nav, NavItem, NavLink, Container } from "reactstrap";
 import {
   BrowserRouter as Router,
   Routes,
@@ -34,13 +34,13 @@ const App = () => {
           </NavItem>
         </Nav>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/roadmap" element={<RoadMap />} />
         </Routes>
-      </div>
+      </Container>
     </Router>
   );
 };
