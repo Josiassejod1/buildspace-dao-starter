@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import WhitePaper from "./RoadMap";
+import { Nav, NavItem, NavLink } from "reactstrap";
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,22 +13,26 @@ const App = () => {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
+        <Nav
+        >
+          <NavItem>
+            <NavLink
+            >
               <Link to="/">Home</Link>
-            </li>
-            <li>
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink >
               <Link to="/mission">Our Mission</Link>
-            </li>
-          </ul>
-        </nav>
+            </NavLink>
+          </NavItem>
+        </Nav>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/mission" element={<WhitePaper />} />
-          </Routes>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mission" element={<WhitePaper />} />
+        </Routes>
       </div>
     </Router>
   );

@@ -11,7 +11,15 @@ body {
   overflow-x: visible;
 }
 
-p {
+a :any-link, a {
+  color:blue;
+  font-size: large;
+  text-decoration:none;
+  font-size: 20px;
+  font-family: copperplate
+}
+
+#speech {
   font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
 }
 #root {
@@ -20,12 +28,14 @@ p {
 }
 
 h1 {
+  font-family: copperplate, sans-serif;
   font-size: 4rem;
   color: black;
 }
 
 p {
   font-size: 1.5rem;
+    font-family: copperplate;
   color: black;
 }
 @media screen and (max-width: 768px) {
@@ -135,7 +145,7 @@ button {
   font-family: inherit;
   padding: 1.2rem 2rem;
   text-transform: uppercase;
-  border-radius: 3rem;
+  border-radius: 25px;
   font-size: 1.2rem;
 }
 

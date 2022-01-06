@@ -62,7 +62,9 @@ const Home = () => {
           <div>
           <img src={coat} width="50%" height="25%" />   
           </div>
-          <h1>Welcome to The Haiti DAO</h1>     
+          <div style={{padding: "15px"}}>
+          <h1>Welcome to The Haiti DAO</h1>  
+          </div>   
           { comingSoon ? <button>Drop Coming Soon</button> : <button onClick={() => connectWallet("injected")} >Join The DAO</button>}
           <p>"Empowering The Haitian Diaspora To Help Haiti"</p>
           <p>
@@ -70,15 +72,15 @@ const Home = () => {
             and <strong><a href="https://www.securinginternships.com" target="_blank">a book donation</a></strong> to <strong><a href="https://www.jeoc.org" target="_blank">www.jeoc.org</a></strong> for students in Haiti for 
             each donation.
           </p>
-          <h3>
+          {/* <p>
            Donation FAQ
-          </h3>
-          <h4>
+          </p>
+          <p>
             Funds from this drop will go to Change Foundation & The JEOC  Non Profit
-          </h4>
-          <h4>
+          </p>
+          <p>
             *A portion of the funds will be used to cover shipping fees to JEOC*
-          </h4>  
+          </p>   */}
           <div className="text-center">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo}  height="25"/>
          <div>
