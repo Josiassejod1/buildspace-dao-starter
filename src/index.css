@@ -9,6 +9,10 @@ body {
   animation: gradient-animation 2s ease infinite;
   overflow-x: hidden;
 }
+
+p {
+  font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+}
 #root {
   min-height: 100vh;
   display: flex;
