@@ -13,7 +13,7 @@ import RoadMap from "./RoadMap";
 const App = () => {
   return (
     <Router>
-      <div>
+       <Container style={{ justifyContent: 'center', alignItems: 'center' }}>
         <Nav
         >
           <NavItem>
@@ -33,8 +33,7 @@ const App = () => {
             </NavLink>
           </NavItem>
         </Nav>
-      </div>
-      <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+     
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mission" element={<Mission />} />
