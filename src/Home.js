@@ -72,15 +72,6 @@ const Home = () => {
             and <strong><a href="https://www.securinginternships.com" target="_blank">a book donation</a></strong> to <strong><a href="https://www.jeoc.org" target="_blank">www.jeoc.org</a></strong> for students in Haiti for 
             each NFT minted.
           </p>
-          {/* <p>
-           Donation FAQ
-          </p>
-          <p>
-            Funds from this drop will go to Change Foundation & The JEOC  Non Profit
-          </p>
-          <p>
-            *A portion of the funds will be used to cover shipping fees to JEOC*
-          </p>   */}
           <div className="text-center">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo}  height="25"/>
          <div>
