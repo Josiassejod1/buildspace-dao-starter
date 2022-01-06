@@ -23,7 +23,7 @@ const App = () => {
           </ul>
         </nav>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/mission" element={<WhitePaper />} />

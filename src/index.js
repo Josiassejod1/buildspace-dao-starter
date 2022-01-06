@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 
 import { ThirdwebWeb3Provider} from '@3rdweb/hooks';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // 4 = Rinkeby
 const supportChainIds = [4];
