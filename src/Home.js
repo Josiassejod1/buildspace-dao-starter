@@ -91,8 +91,6 @@ const Home = () => {
   src="https://cloudflare-ipfs.com/ipfs/bafybeic4ujkaaga3sklcjehvjnzssmur32r2njhttmnyokputtlgwh6q4e?contract=0xA8ebeF946136F37662Ed92877CaDb69482a68783&chainId=137"
   width="600px"
   height="600px"
-  style="max-width:100%;"
-  frameborder="0"
 />}
       <div className="text-center">
         <img
